@@ -1,0 +1,109 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine, Namrata ❤️</title>
+    <style>
+        body {
+            background-color: #ffcccb;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        h1 {
+            color: red;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        
+        p {
+            color: #d63384;
+            font-size: 1.5em;
+        }
+
+        .buttons {
+            margin-top: 50px;
+        }
+
+        .btn {
+            font-size: 1.5em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        .yes {
+            background-color: #ff4d4d;
+            color: white;
+        }
+
+        .no {
+            background-color: #666;
+            color: white;
+            position: absolute;
+        }
+
+        .music-controls {
+            margin-top: 20px;
+        }
+
+        .music-btn {
+            background-color: #d63384;
+            color: white;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Valentine's Day, Namrata! ❤️</h1>
+    <p>Will you be my Valentine? 🥰</p>
+
+    <div class="buttons">
+        <button class="btn yes" onclick="accept()">Yes! ❤️</button>
+        <button class="btn no" id="noBtn">No 🙈</button>
+    </div>
+
+    <!-- Background Music (Autoplay) -->
+    <audio id="bgMusic" autoplay muted>
+        <source src="https://drive.google.com/uc?export=download&id=1a2FYyGw1KeJyBt-y918rRIhjmZrLeT5u" type="audio/mpeg">
+    </audio>
+
+    <div class="music-controls">
+        <button class="music-btn" onclick="toggleMusic()">🎶 Play/Pause Music</button>
+    </div>
+
+    <script>
+        function accept() {
+            alert("Congratulations Namrata! You just got lifetime subscription of me. 😜");
+        }
+
+        let noBtn = document.getElementById("noBtn");
+
+        noBtn.addEventListener("mouseover", function() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 100);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        // Music Controls
+        let bgMusic = document.getElementById("bgMusic");
+
+        function toggleMusic() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+            } else {
+                bgMusic.pause();
+            }
+        }
+    </script>
+</body>
+</html>
